@@ -5,6 +5,7 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
+
 	//_ "github.com/mattn/go-sqlite3"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -37,7 +38,7 @@ func InitDatabase() {
 	//如果是开发模式，则显示命令信息
 	isDev := (beego.AppConfig.String("runmode") == "dev")
 	//自动建表
-	orm.RunSyncdb("default", false, isDev)
+	// orm.RunSyncdb("default", false, isDev)
 	if isDev {
 		orm.Debug = isDev
 	}
